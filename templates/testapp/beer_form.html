@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{%extends 'testapp/home.html' %}
+{%block body%}
+{%load static%}
+
+<h4 class="heading">Register Your Brand</h4>
+<div class="Container">
+    <form method="POST">
+        {{form.as_p}}
+        {%csrf_token%}
+        <input type="submit" value="Register" class="btn btn-success">
+    </form>
+</div>
+{%endblock%}

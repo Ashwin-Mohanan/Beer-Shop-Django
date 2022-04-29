@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%extends 'testapp/home.html' %}
+{%block body%}
+<h4 class="heading">List of brands available </h4>
+<div class="Container">
+    <table class="table">
+        <tr>
+            <td>Beer Companies</td>
+            <td>View Details</td>
+            <td>Operations</td>
+        </tr>
+        {% for b in beer_list %}
+        <tr>
+            <td>{{b.Bname}}</td>
+            <td><a href="/{{b.id}}" class="btn btn-primary">View Details</a></td>
+            <td><a href="/{{b.id}}/update" class="btn btn-success">Update</a> <a href="/{{b.id}}/delete"
+                    class="btn btn-danger">Delete</a></td>
+
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{%endblock%}
